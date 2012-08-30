@@ -1,0 +1,6 @@
+name: ParticleTester
+main: com.chrischurchwell.particletester.ParticleTester
+version: ${version}
+description: Test SpoutPlugin's Particle API
+author: Chris Churchwell (thedudeguy)
+depend: [Spout]
