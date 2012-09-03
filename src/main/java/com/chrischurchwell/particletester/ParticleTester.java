@@ -75,7 +75,7 @@ public class ParticleTester extends JavaPlugin {
 		
 		//double check for spout.
 		if (!Bukkit.getPluginManager().isPluginEnabled("Spout")) {
-			Bukkit.getLogger().log(Level.WARNING, "[JukeBukkit] Could not start: SpoutPlugin not found. SpoutPlugin is required for JukeBukkit to operate.");
+			Bukkit.getLogger().log(Level.WARNING, "[ParticleTester] Could not start: SpoutPlugin not found. SpoutPlugin is required for JukeBukkit to operate.");
 			setEnabled(false);
 			return;
 		}
