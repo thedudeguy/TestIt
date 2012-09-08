@@ -6,17 +6,21 @@ import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.util.Vector;
+import org.getspout.spoutapi.SpoutManager;
 import org.getspout.spoutapi.block.SpoutBlock;
 import org.getspout.spoutapi.particle.Particle;
+import org.getspout.spoutapi.sound.SoundEffect;
 
 import com.chrischurchwell.particletester.material.ParticleEmitter;
 import com.chrischurchwell.particletester.material.ParticleSetting;
+import com.chrischurchwell.particletester.material.SoundEmitter;
 import com.chrischurchwell.particletester.texture.TextureFile;
 
 public class ParticleTester extends JavaPlugin {
 
 	public static ParticleTester instance;
 	public static ParticleEmitter blockParticleEmitter;
+	public static SoundEmitter blockSoundEmitter;
 	
 	public static ParticleTester getInstance() {
 		return instance;
@@ -24,6 +28,15 @@ public class ParticleTester extends JavaPlugin {
 	
 	public static void log(String message) {
 		Bukkit.getLogger().log(Level.INFO, "[ParticleTester] " + message);
+	}
+	
+	public static void playSound(SpoutBlock block, SoundEffect ps) {
+		playSound(block.getLocation(), ps);
+	}
+	
+	public static void playSound(Location location, SoundEffect ps) {
+		log("Playing " + ps.toString());
+		SpoutManager.getSoundManager().playGlobalSoundEffect(ps, location, 100, 100);
 	}
 	
 	public static void spawnParticle(SpoutBlock block, ParticleSetting ps) {
@@ -93,6 +106,7 @@ public class ParticleTester extends JavaPlugin {
 		
 		//load the custom block
 		blockParticleEmitter = new ParticleEmitter();
+		blockSoundEmitter = new SoundEmitter();
 		
 		log("Enabled");
 	}
