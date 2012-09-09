@@ -1,6 +1,7 @@
 package com.chrischurchwell.particletester.gui.widget;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import org.getspout.spoutapi.block.SpoutBlock;
@@ -15,6 +16,8 @@ public class SoundEffectCombo extends GenericComboBox {
 	
 	private SpoutBlock block;
 	
+	public static HashMap<String, SoundEffect> soundEffects = new HashMap<String, SoundEffect>();
+	
 	public SoundEffectCombo(SpoutBlock block) {
 		
 		this.block = block;
@@ -23,14 +26,15 @@ public class SoundEffectCombo extends GenericComboBox {
 		List<String> pTypes = new ArrayList<String>();
 		for( SoundEffect e : SoundEffect.values()) {
 			if (!e.equals(SoundEffect.CUSTOM_EFFECT)) {
-				pTypes.add(e.getName());
+				soundEffects.put(e.toString(), e);
+				pTypes.add(e.toString());
 			}
 		}
 		
 		setFormat("%text%");
 		setItems(pTypes);
 		
-		setText("Type: " + SoundEmitter.soundMap.get(block.getLocation()).getName());
+		setText("Type: " + SoundEmitter.soundMap.get(block.getLocation()).toString());
 	}
 	
 	@Override
@@ -38,7 +42,7 @@ public class SoundEffectCombo extends GenericComboBox {
 		if (i >= 0) {
 			setText("Type: " + text);
 			
-			SoundEffect sound = SoundEffect.getSoundEffectFromName(text);
+			SoundEffect sound = soundEffects.get(text);
 			SoundEmitter.soundMap.put(block.getLocation(), sound);
 			
 			ParticleTester.playSound(this.block, sound);
