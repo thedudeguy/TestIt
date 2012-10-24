@@ -28,15 +28,6 @@ public class ParticleEmitter extends GenericCustomBlock {
 		design.setTexture(TestIt.getInstance(), TextureFile.BLOCK_PARTICLE_EMITTER.getTexture());
 		setBlockDesign(design);
 		setHardness(0.1F);
-		/*
-		this.setBlockDesign(
-				new Model(
-						ParticleTester.getInstance().getResource("models/particleemitter.obj"))
-							.getDesign().setTexture(
-									ParticleTester.getInstance(), 
-									TextureFile.BLOCK_PARTICLE_EMITTER.getTexture())
-			);
-		*/
 		
 		//set the recipe.
 		/*
