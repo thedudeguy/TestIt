@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.chrischurchwell</groupId>
 	<artifactId>testit</artifactId>
-	<version>dev-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>TestIt</name>
 	<repositories>
 		<repository>
