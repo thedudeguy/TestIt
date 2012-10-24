@@ -26,7 +26,7 @@ public class SoundEmitter extends GenericCustomBlock {
 	public SoundEmitter() {
 		super(TestIt.getInstance(), "Sound Emitter", Material.CAULDRON.getId());
 		
-		Model model = new Model(TestIt.getInstance().getResource("models/particleemitter.obj"));
+		Model model = new Model(TestIt.getInstance().getResource("models/soundemitter.obj"));
 		
 		BlockDesign design = model.getDesign();
 		design.setTexture(TestIt.getInstance(), TextureFile.BLOCK_PARTICLE_EMITTER.getTexture());
