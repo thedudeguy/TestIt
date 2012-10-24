@@ -4,12 +4,8 @@ import java.util.HashMap;
 
 import org.bukkit.Location;
 import org.bukkit.Material;
-import org.getspout.spoutapi.SpoutManager;
 import org.getspout.spoutapi.block.SpoutBlock;
 import org.getspout.spoutapi.block.design.BlockDesign;
-import org.getspout.spoutapi.inventory.SpoutItemStack;
-import org.getspout.spoutapi.inventory.SpoutShapedRecipe;
-import org.getspout.spoutapi.material.MaterialData;
 import org.getspout.spoutapi.material.block.GenericCustomBlock;
 import org.getspout.spoutapi.player.SpoutPlayer;
 
@@ -43,11 +39,13 @@ public class ParticleEmitter extends GenericCustomBlock {
 		*/
 		
 		//set the recipe.
+		/*
 		SpoutManager.getMaterialManager().registerSpoutRecipe(
 				new SpoutShapedRecipe(new SpoutItemStack(this, 1))
 				.shape(" i ", " i ", "iii")
 				.setIngredient('i', MaterialData.ironIngot)
 			);
+		*/
 	}
 	
 	public boolean onBlockInteract(org.bukkit.World world, int x, int y, int z, SpoutPlayer player) {
