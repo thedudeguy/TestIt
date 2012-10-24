@@ -1,4 +1,4 @@
-package com.chrischurchwell.particletester.gui.widget;
+package com.chrischurchwell.testit.gui.widget;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -8,9 +8,9 @@ import org.getspout.spoutapi.block.SpoutBlock;
 import org.getspout.spoutapi.gui.GenericComboBox;
 import org.getspout.spoutapi.sound.SoundEffect;
 
-import com.chrischurchwell.particletester.ParticleTester;
-import com.chrischurchwell.particletester.material.ParticleEmitter;
-import com.chrischurchwell.particletester.material.SoundEmitter;
+import com.chrischurchwell.testit.TestIt;
+import com.chrischurchwell.testit.material.ParticleEmitter;
+import com.chrischurchwell.testit.material.SoundEmitter;
 
 public class SoundEffectCombo extends GenericComboBox {
 	
@@ -45,7 +45,7 @@ public class SoundEffectCombo extends GenericComboBox {
 			SoundEffect sound = soundEffects.get(text);
 			SoundEmitter.soundMap.put(block.getLocation(), sound);
 			
-			ParticleTester.playSound(this.block, sound);
+			TestIt.playSound(this.block, sound);
 		}
 	}
 	

@@ -1,4 +1,4 @@
-package com.chrischurchwell.particletester.material;
+package com.chrischurchwell.testit.material;
 
 import java.util.HashMap;
 
@@ -14,22 +14,22 @@ import org.getspout.spoutapi.material.block.GenericCustomBlock;
 import org.getspout.spoutapi.player.SpoutPlayer;
 
 import com.chrischurchwell.meshit.Model;
-import com.chrischurchwell.particletester.ParticleTester;
-import com.chrischurchwell.particletester.gui.ParticleGUI;
-import com.chrischurchwell.particletester.texture.TextureFile;
+import com.chrischurchwell.testit.TestIt;
+import com.chrischurchwell.testit.gui.ParticleGUI;
+import com.chrischurchwell.testit.texture.TextureFile;
 
 public class ParticleEmitter extends GenericCustomBlock {
 	
 	public static HashMap<Location, ParticleSetting> particleSettings = new HashMap<Location, ParticleSetting>();
 	
 	public ParticleEmitter() {
-		super(ParticleTester.getInstance(), "Particle Emitter", Material.CAULDRON.getId());
+		super(TestIt.getInstance(), "Particle Emitter", Material.CAULDRON.getId());
 		
 		//Model model = new Model(ParticleTester.getInstance().getResource("models/machineBlock.obj"));
-		Model model = new Model(ParticleTester.getInstance().getResource("models/particleemitter.obj"));
+		Model model = new Model(TestIt.getInstance().getResource("models/particleemitter.obj"));
 		
 		BlockDesign design = model.getDesign();
-		design.setTexture(ParticleTester.getInstance(), TextureFile.BLOCK_PARTICLE_EMITTER.getTexture());
+		design.setTexture(TestIt.getInstance(), TextureFile.BLOCK_PARTICLE_EMITTER.getTexture());
 		setBlockDesign(design);
 		setHardness(0.1F);
 		/*
@@ -72,7 +72,7 @@ public class ParticleEmitter extends GenericCustomBlock {
 		//get settings
 		ParticleSetting ps = particleSettings.get(block.getLocation());
 		
-		ParticleTester.spawnParticle(block, ps);
+		TestIt.spawnParticle(block, ps);
 	}
 	
 	/*

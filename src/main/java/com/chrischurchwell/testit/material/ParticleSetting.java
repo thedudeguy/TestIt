@@ -1,4 +1,4 @@
-package com.chrischurchwell.particletester.material;
+package com.chrischurchwell.testit.material;
 
 import org.getspout.spoutapi.particle.Particle.ParticleType;
 

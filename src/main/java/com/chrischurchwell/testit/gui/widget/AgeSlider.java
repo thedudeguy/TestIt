@@ -1,9 +1,9 @@
-package com.chrischurchwell.particletester.gui.widget;
+package com.chrischurchwell.testit.gui.widget;
 
 import org.getspout.spoutapi.block.SpoutBlock;
 
-import com.chrischurchwell.particletester.material.ParticleEmitter;
-import com.chrischurchwell.particletester.material.ParticleSetting;
+import com.chrischurchwell.testit.material.ParticleEmitter;
+import com.chrischurchwell.testit.material.ParticleSetting;
 
 public class AgeSlider extends SettingSlider {
 	

@@ -1,20 +1,20 @@
-package com.chrischurchwell.particletester.gui.widget;
+package com.chrischurchwell.testit.gui.widget;
 
 import org.getspout.spoutapi.block.SpoutBlock;
 
-import com.chrischurchwell.particletester.material.ParticleEmitter;
-import com.chrischurchwell.particletester.material.ParticleSetting;
+import com.chrischurchwell.testit.material.ParticleEmitter;
+import com.chrischurchwell.testit.material.ParticleSetting;
 
-public class MotionZSlider extends SettingSlider {
+public class MotionYSlider extends SettingSlider {
 	
 	private double value = 0;
 	
-	public MotionZSlider(SpoutBlock block) {
-		super("Motion Z", block);
-		value = ParticleEmitter.particleSettings.get(block.getLocation()).getMotionZ();
+	public MotionYSlider(SpoutBlock block) {
+		super("Motion Y", block);
+		value = ParticleEmitter.particleSettings.get(block.getLocation()).getMotionY();
 		update();
 	}
-
+	
 	@Override
 	public Object getValue() {
 		return value;
@@ -25,13 +25,12 @@ public class MotionZSlider extends SettingSlider {
 		value = (double)position;
 		
 		ParticleSetting ps = ParticleEmitter.particleSettings.get(block.getLocation());
-		ps.setMotionZ(value);
+		ps.setMotionY(value);
 		ParticleEmitter.particleSettings.put(block.getLocation(), ps);
 	}
-	
+
 	@Override
 	public float getPosition() {
 		return (float)value;
 	}
-	
 }

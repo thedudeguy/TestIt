@@ -1,4 +1,4 @@
-package com.chrischurchwell.particletester;
+package com.chrischurchwell.testit;
 
 import java.util.logging.Level;
 
@@ -11,23 +11,23 @@ import org.getspout.spoutapi.block.SpoutBlock;
 import org.getspout.spoutapi.particle.Particle;
 import org.getspout.spoutapi.sound.SoundEffect;
 
-import com.chrischurchwell.particletester.material.ParticleEmitter;
-import com.chrischurchwell.particletester.material.ParticleSetting;
-import com.chrischurchwell.particletester.material.SoundEmitter;
-import com.chrischurchwell.particletester.texture.TextureFile;
+import com.chrischurchwell.testit.material.ParticleEmitter;
+import com.chrischurchwell.testit.material.ParticleSetting;
+import com.chrischurchwell.testit.material.SoundEmitter;
+import com.chrischurchwell.testit.texture.TextureFile;
 
-public class ParticleTester extends JavaPlugin {
+public class TestIt extends JavaPlugin {
 
-	public static ParticleTester instance;
+	public static TestIt instance;
 	public static ParticleEmitter blockParticleEmitter;
 	public static SoundEmitter blockSoundEmitter;
 	
-	public static ParticleTester getInstance() {
+	public static TestIt getInstance() {
 		return instance;
 	}
 	
 	public static void log(String message) {
-		Bukkit.getLogger().log(Level.INFO, "[ParticleTester] " + message);
+		Bukkit.getLogger().log(Level.INFO, "[TestIt] " + message);
 	}
 	
 	public static void playSound(SpoutBlock block, SoundEffect ps) {
@@ -66,20 +66,20 @@ public class ParticleTester extends JavaPlugin {
 		particle.setRange(ps.getRange());
 		particle.setScale(ps.getScale());
 		
-		ParticleTester.log("--------------------------");
-		ParticleTester.log("Spawning Particle...");
-		ParticleTester.log("Type: " + particle.getName());
-		ParticleTester.log("Amount: " + String.valueOf(particle.getAmount()));
-		ParticleTester.log("Gravity: " + String.valueOf(particle.getGravity()));
-		ParticleTester.log("Age: " + String.valueOf(particle.getMaxAge()));
-		ParticleTester.log("Range: " + String.valueOf(particle.getRange()));
-		ParticleTester.log("Scale: " + String.valueOf(particle.getScale()));
-		ParticleTester.log("Red: " + String.valueOf(particle.getParticleRed()));
-		ParticleTester.log("Green: " + String.valueOf(particle.getParticleGreen()));
-		ParticleTester.log("Blue: " + String.valueOf(particle.getParticleBlue()));
-		ParticleTester.log("Motion X: " + String.valueOf(particle.getMotion().getX()));
-		ParticleTester.log("Motion Y: " + String.valueOf(particle.getMotion().getY()));
-		ParticleTester.log("Motion Z: " + String.valueOf(particle.getMotion().getZ()));
+		TestIt.log("--------------------------");
+		TestIt.log("Spawning Particle...");
+		TestIt.log("Type: " + particle.getName());
+		TestIt.log("Amount: " + String.valueOf(particle.getAmount()));
+		TestIt.log("Gravity: " + String.valueOf(particle.getGravity()));
+		TestIt.log("Age: " + String.valueOf(particle.getMaxAge()));
+		TestIt.log("Range: " + String.valueOf(particle.getRange()));
+		TestIt.log("Scale: " + String.valueOf(particle.getScale()));
+		TestIt.log("Red: " + String.valueOf(particle.getParticleRed()));
+		TestIt.log("Green: " + String.valueOf(particle.getParticleGreen()));
+		TestIt.log("Blue: " + String.valueOf(particle.getParticleBlue()));
+		TestIt.log("Motion X: " + String.valueOf(particle.getMotion().getX()));
+		TestIt.log("Motion Y: " + String.valueOf(particle.getMotion().getY()));
+		TestIt.log("Motion Z: " + String.valueOf(particle.getMotion().getZ()));
 		
 		particle.spawn();
 	}
@@ -88,7 +88,7 @@ public class ParticleTester extends JavaPlugin {
 		
 		//double check for spout.
 		if (!Bukkit.getPluginManager().isPluginEnabled("Spout")) {
-			Bukkit.getLogger().log(Level.WARNING, "[ParticleTester] Could not start: SpoutPlugin not found. SpoutPlugin is required for JukeBukkit to operate.");
+			Bukkit.getLogger().log(Level.WARNING, "[TestIt] Could not start: SpoutPlugin not found. SpoutPlugin is required for JukeBukkit to operate.");
 			setEnabled(false);
 			return;
 		}

@@ -1,4 +1,4 @@
-package com.chrischurchwell.particletester.gui.widget;
+package com.chrischurchwell.testit.gui.widget;
 
 import java.text.DecimalFormat;
 import java.text.NumberFormat;

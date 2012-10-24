@@ -16,7 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.chrischurchwell.particletester.texture;
+package com.chrischurchwell.testit.texture;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -27,7 +27,7 @@ import org.bukkit.Bukkit;
 import org.getspout.spoutapi.SpoutManager;
 import org.getspout.spoutapi.block.design.Texture;
 
-import com.chrischurchwell.particletester.ParticleTester;
+import com.chrischurchwell.testit.TestIt;
 
 public enum TextureFile {
 	/* items */
@@ -62,12 +62,12 @@ public enum TextureFile {
 		// since the texture class actually uses the width/height/size parameters to calculate u-v coordinates
 		// its safe to just use the default texture size, and any custom textures with higher resolutions
 		// will still work fine assuming the custom texture was scaled properly. (in powers of 2 and maintains size ratio)
-		return new Texture(ParticleTester.getInstance(), this.file, this.width, this.height, this.size);
+		return new Texture(TestIt.getInstance(), this.file, this.width, this.height, this.size);
 		
 	}
 	
 	public static void extractTextures() {
-		File dir = new File(ParticleTester.getInstance().getDataFolder(), "textures");
+		File dir = new File(TestIt.getInstance().getDataFolder(), "textures");
 		
 		if (!dir.exists()) dir.mkdirs();
 		if (!dir.canWrite()) Bukkit.getLogger().log(Level.WARNING, "The path "+ dir.getPath() +" is not writable");
@@ -75,7 +75,7 @@ public enum TextureFile {
 		
 		for (TextureFile texture : TextureFile.values()) {
 			String fileCopyRelPath = new File("textures", texture.getFile()).getPath();
-			ParticleTester.getInstance().saveResource(fileCopyRelPath, true);
+			TestIt.getInstance().saveResource(fileCopyRelPath, true);
 		}
 	}
 	
@@ -85,13 +85,13 @@ public enum TextureFile {
 		for (TextureFile texture : TextureFile.values()) {
 			textures.add(texture.getFile());
 		}
-		SpoutManager.getFileManager().removeFromCache(ParticleTester.getInstance(), textures);
+		SpoutManager.getFileManager().removeFromCache(TestIt.getInstance(), textures);
 		
 		//add
 		for (TextureFile texture : TextureFile.values()) {
 			SpoutManager.getFileManager().addToPreLoginCache(
-					ParticleTester.getInstance(),
-					new File(ParticleTester.getInstance().getDataFolder(), new File("textures", texture.getFile()).getPath())
+					TestIt.getInstance(),
+					new File(TestIt.getInstance().getDataFolder(), new File("textures", texture.getFile()).getPath())
 					);
 		}
 	}
@@ -102,13 +102,13 @@ public enum TextureFile {
 		for (TextureFile texture : TextureFile.values()) {
 			textures.add(texture.getFile());
 		}
-		SpoutManager.getFileManager().removeFromCache(ParticleTester.getInstance(), textures);
+		SpoutManager.getFileManager().removeFromCache(TestIt.getInstance(), textures);
 		
 		//add
 		for (TextureFile texture : TextureFile.values()) {
 			SpoutManager.getFileManager().addToCache(
-					ParticleTester.getInstance(),
-					new File(ParticleTester.getInstance().getDataFolder(), new File("textures", texture.getFile()).getPath())
+					TestIt.getInstance(),
+					new File(TestIt.getInstance().getDataFolder(), new File("textures", texture.getFile()).getPath())
 					);
 		}
 	}

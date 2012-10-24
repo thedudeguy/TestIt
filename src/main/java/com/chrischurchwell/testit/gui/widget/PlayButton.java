@@ -1,12 +1,12 @@
-package com.chrischurchwell.particletester.gui.widget;
+package com.chrischurchwell.testit.gui.widget;
 
 import org.getspout.spoutapi.block.SpoutBlock;
 import org.getspout.spoutapi.event.screen.ButtonClickEvent;
 import org.getspout.spoutapi.gui.GenericButton;
 import org.getspout.spoutapi.sound.SoundEffect;
 
-import com.chrischurchwell.particletester.ParticleTester;
-import com.chrischurchwell.particletester.material.SoundEmitter;
+import com.chrischurchwell.testit.TestIt;
+import com.chrischurchwell.testit.material.SoundEmitter;
 
 public class PlayButton extends GenericButton {
 
@@ -19,7 +19,7 @@ public class PlayButton extends GenericButton {
 	
 	public void onButtonClick(ButtonClickEvent event) {
 		SoundEffect ps = SoundEmitter.soundMap.get(block.getLocation());
-		ParticleTester.playSound(block, ps);
+		TestIt.playSound(block, ps);
 		//event.getPlayer().getMainScreen().getActivePopup().close();
 	}
 }

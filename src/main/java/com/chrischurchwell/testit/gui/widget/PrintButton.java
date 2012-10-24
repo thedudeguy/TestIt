@@ -1,4 +1,4 @@
-package com.chrischurchwell.particletester.gui.widget;
+package com.chrischurchwell.testit.gui.widget;
 
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
@@ -9,8 +9,8 @@ import org.getspout.spoutapi.block.SpoutBlock;
 import org.getspout.spoutapi.event.screen.ButtonClickEvent;
 import org.getspout.spoutapi.gui.GenericButton;
 
-import com.chrischurchwell.particletester.material.ParticleEmitter;
-import com.chrischurchwell.particletester.material.ParticleSetting;
+import com.chrischurchwell.testit.material.ParticleEmitter;
+import com.chrischurchwell.testit.material.ParticleSetting;
 
 public class PrintButton extends GenericButton {
 	

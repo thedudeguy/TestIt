@@ -1,4 +1,4 @@
-package com.chrischurchwell.particletester.material;
+package com.chrischurchwell.testit.material;
 
 import java.util.HashMap;
 
@@ -15,21 +15,21 @@ import org.getspout.spoutapi.player.SpoutPlayer;
 import org.getspout.spoutapi.sound.SoundEffect;
 
 import com.chrischurchwell.meshit.Model;
-import com.chrischurchwell.particletester.ParticleTester;
-import com.chrischurchwell.particletester.gui.SoundEffectGUI;
-import com.chrischurchwell.particletester.texture.TextureFile;
+import com.chrischurchwell.testit.TestIt;
+import com.chrischurchwell.testit.gui.SoundEffectGUI;
+import com.chrischurchwell.testit.texture.TextureFile;
 
 public class SoundEmitter extends GenericCustomBlock {
 	
 	public static HashMap<Location, SoundEffect> soundMap = new HashMap<Location, SoundEffect>();
 	
 	public SoundEmitter() {
-		super(ParticleTester.getInstance(), "Sound Emitter", Material.CAULDRON.getId());
+		super(TestIt.getInstance(), "Sound Emitter", Material.CAULDRON.getId());
 		
-		Model model = new Model(ParticleTester.getInstance().getResource("models/particleemitter.obj"));
+		Model model = new Model(TestIt.getInstance().getResource("models/particleemitter.obj"));
 		
 		BlockDesign design = model.getDesign();
-		design.setTexture(ParticleTester.getInstance(), TextureFile.BLOCK_PARTICLE_EMITTER.getTexture());
+		design.setTexture(TestIt.getInstance(), TextureFile.BLOCK_PARTICLE_EMITTER.getTexture());
 		setBlockDesign(design);
 		setHardness(0.1F);
 		
@@ -64,7 +64,7 @@ public class SoundEmitter extends GenericCustomBlock {
 		//get sound effect.
 		SoundEffect ps = soundMap.get(block.getLocation());
 		
-		ParticleTester.playSound(block, ps);
+		TestIt.playSound(block, ps);
 	}
 	
 	/*

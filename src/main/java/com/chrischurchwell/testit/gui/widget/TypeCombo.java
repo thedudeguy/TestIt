@@ -1,4 +1,4 @@
-package com.chrischurchwell.particletester.gui.widget;
+package com.chrischurchwell.testit.gui.widget;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,8 +7,8 @@ import org.getspout.spoutapi.block.SpoutBlock;
 import org.getspout.spoutapi.gui.GenericComboBox;
 import org.getspout.spoutapi.particle.Particle.ParticleType;
 
-import com.chrischurchwell.particletester.material.ParticleEmitter;
-import com.chrischurchwell.particletester.material.ParticleSetting;
+import com.chrischurchwell.testit.material.ParticleEmitter;
+import com.chrischurchwell.testit.material.ParticleSetting;
 
 public class TypeCombo extends GenericComboBox {
 	

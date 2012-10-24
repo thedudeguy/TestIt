@@ -1,12 +1,12 @@
-package com.chrischurchwell.particletester.gui.widget;
+package com.chrischurchwell.testit.gui.widget;
 
 import org.getspout.spoutapi.block.SpoutBlock;
 import org.getspout.spoutapi.event.screen.ButtonClickEvent;
 import org.getspout.spoutapi.gui.GenericButton;
 
-import com.chrischurchwell.particletester.ParticleTester;
-import com.chrischurchwell.particletester.material.ParticleEmitter;
-import com.chrischurchwell.particletester.material.ParticleSetting;
+import com.chrischurchwell.testit.TestIt;
+import com.chrischurchwell.testit.material.ParticleEmitter;
+import com.chrischurchwell.testit.material.ParticleSetting;
 
 public class SpawnButton extends GenericButton {
 
@@ -19,7 +19,7 @@ public class SpawnButton extends GenericButton {
 	
 	public void onButtonClick(ButtonClickEvent event) {
 		ParticleSetting ps = ParticleEmitter.particleSettings.get(block.getLocation());
-		ParticleTester.spawnParticle(block, ps);
+		TestIt.spawnParticle(block, ps);
 		event.getPlayer().getMainScreen().getActivePopup().close();
 	}
 }
