@@ -26,7 +26,7 @@ Easy.
 
 ## Change Log
 
-### 0.1.0
+### 1.0.0
 
 * Sound Effect API with Sound Emitter Block.
 * Removed Crafting Recipies.
