@@ -9,7 +9,6 @@ import org.getspout.spoutapi.gui.GenericComboBox;
 import org.getspout.spoutapi.sound.SoundEffect;
 
 import com.chrischurchwell.testit.TestIt;
-import com.chrischurchwell.testit.material.ParticleEmitter;
 import com.chrischurchwell.testit.material.SoundEmitter;
 
 public class SoundEffectCombo extends GenericComboBox {
