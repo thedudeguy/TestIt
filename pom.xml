@@ -86,8 +86,8 @@
 		</dependency>
 	</dependencies>
 	<properties>
-		<bukkitVersion>1.3.2-R2.0</bukkitVersion>
-		<spoutVersion>1.3.2-R1.0-SNAPSHOT</spoutVersion>
+		<bukkitVersion>1.4.7-R1.0</bukkitVersion>
+		<spoutVersion>1.4.7-R0.2-SNAPSHOT</spoutVersion>
 		<meshItVersion>0.1.0</meshItVersion>
 	</properties>
 	<inceptionYear>2012</inceptionYear>
